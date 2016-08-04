@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+        html, body{
+            padding:0;
+            margin:0;
+        }
+        .Main{
+            width:900px;
+            margin:0 auto;
+            
+        }
+        img{
+            width:900px;
+        }
+        input{
+            text-align: center;
+            width:900px;
+            height:50px;
+            font-size:14px;
+        }
+        button{
+            width:100px;
+            height:50px;
+            background:green;
+            float:right;
+        }
+        p{
+            text-align: center;
+            position:relative;
+            bottom:60px;
+            font-size:20px;
+            background: red;
+            padding:20px;
+        }
+	</style>
+</head>
+<body>
+
+<script>
+
+    var main=document.createElement("div")
+    main.setAttribute("class","Main")
+    document.body.appendChild(main);
+    
+    
+    var image=document.createElement("img")
+    main.appendChild(image)
+    document.getElementsByTagName("img")[0].src="img/html.jpg";
+    
+    var paragraph = document.createElement("p")
+    var t= document.createTextNode("TEXT");
+    paragraph.appendChild(t)
+    main.appendChild(paragraph)
+    
+    
+    var inp=document.createElement("input")
+    main.appendChild(inp)
+    inp.setAttribute("type","text")
+    inp.setAttribute("value","img source")
+    
+    var but=document.createElement("button")    
+    main.appendChild(but)
+    but.setAttribute("onclick","add()")
+    but.setAttribute("value","add")
+    
+    var inp=document.createElement("input")
+    main.appendChild(inp)
+    inp.setAttribute("type","text")
+    inp.setAttribute("onchange","add1()")
+    inp.setAttribute("value","TEXT CHANGE")
+    
+    var but=document.createElement("button")
+    main.appendChild(but)
+    but.setAttribute("onclick","add1()")
+    but.setAttribute("value","add")
+    
+    
+    
+    
+    
+    var img=document.getElementsByTagName("img")[0];
+    var sekil=document.getElementsByTagName("input")[0];
+    var text=document.getElementsByTagName("input")[1];
+    
+    function add1(){
+     var textInput=text.value;
+        document.getElementsByTagName("p")[0].innerHTML+=textInput;
+    }
+    
+    function add(){
+     var imgInput=sekil.value;
+     document.getElementsByTagName("img")[0].src=imgInput;
+    }
+</script>
+</body>
+</html>
